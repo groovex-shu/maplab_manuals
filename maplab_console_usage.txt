@@ -1,0 +1,79 @@
+cmd
+
+# start console trenimal ------------------------
+
+$ roscore (if no master)
+$ rosrun maplab_console maplab_console
+
+https://maplab.asl.ethz.ch/docs/master/pages/tutorials-maplab/basics/A_Basic-Console-Usage.html
+
+
+
+
+# leave console trenimal -------------------------
+
+$ q 
+or 
+$ exit
+
+
+
+# load result map --------------------------------
+
+## if in result folder
+$ load --map_key my_map_key --map_folder ./
+
+## if not
+$ load --map_key my_map_key --map_folder <path_to_map folder>
+
+
+## merge 2 map
+$ load_merge_map --map_key my_map_key2 --map_folder <path_to_map folder>
+
+
+
+
+# visualize map -----------------------------------
+
+$ v
+(open Rviz in other terminal)
+
+# exec loop-closure -------------------------------
+
+$ lc
+
+https://maplab.asl.ethz.ch/docs/master/pages/tutorials-maplab/basics/F_Understanding-loop-closure.html
+
+
+
+# exec BA ------------------------------------------
+
+$ optvi --ba_num_iterations                 Set the maximum number of iterations of the optimization.
+        --ba_visualize_every_n_iterations   Visualize the result of the optimization at every Nth step.
+
+:== optimize_visual_inertial
+
+
+https://maplab.asl.ethz.ch/docs/master/pages/tutorials-maplab/basics/G_Optimizing-VI-Maps.html
+
+
+# keyframe opt --------------------------------------
+
+
+$ kfh -- kf_distance_threshold_m	 Maximum distance in meters between two consecutive keyframes.
+	  -- kf_rotation_threshold_deg	 Maximum rotation in degrees between two consecutive keyframes.
+      -- kf_every_nth_vertex	     Forces a keyframe after every n-th vertex.
+      -- kf_min_shared_landmark_obs	 If two vertices share less landmarks than specified by this flag, both will be kept as a kayeframe.
+
+
+
+
+# save map -----------------------------------------
+
+save --map_folder path/to/save/the/map --overwrite
+
+
+
+# save visual odometry -----------------------------
+
+csv_export_vertices_only --csv_export_path=<output folder>

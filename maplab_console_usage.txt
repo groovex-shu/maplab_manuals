@@ -51,19 +51,29 @@ https://maplab.asl.ethz.ch/docs/master/pages/tutorials-maplab/basics/F_Understan
 $ optvi --ba_num_iterations                 Set the maximum number of iterations of the optimization.
         --ba_visualize_every_n_iterations   Visualize the result of the optimization at every Nth step.
 
-:== optimize_visual_inertial
-
+:= optimize_visual_inertial
 
 https://maplab.asl.ethz.ch/docs/master/pages/tutorials-maplab/basics/G_Optimizing-VI-Maps.html
 
 
+
+
+
 # keyframe opt --------------------------------------
 
-
 $ kfh -- kf_distance_threshold_m	 Maximum distance in meters between two consecutive keyframes.
-	  -- kf_rotation_threshold_deg	 Maximum rotation in degrees between two consecutive keyframes.
-      -- kf_every_nth_vertex	     Forces a keyframe after every n-th vertex.
+      -- kf_rotation_threshold_deg	 Maximum rotation in degrees between two consecutive keyframes.
+      -- kf_every_nth_vertex	         Forces a keyframe after every n-th vertex.
       -- kf_min_shared_landmark_obs	 If two vertices share less landmarks than specified by this flag, both will be kept as a kayeframe.
+
+https://maplab.asl.ethz.ch/docs/master/pages/tutorials-maplab/use-cases/B_Map-sparsification.html
+
+
+# landmark retriangulation ---------------------------
+
+$ rtl
+
+:= retriangulate_landmarks
 
 
 
